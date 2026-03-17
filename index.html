@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Murillo Leite - Designer & Pesquisador com estética japonesa, floresta de bambu verde pastel.">
+    <meta name="theme-color" content="#C41E3A">
+    <meta name="author" content="Murillo Leite">
+    <meta name="keywords" content="design, pesquisa, biologia, portfólio, estética japonesa">
+    
+    <!-- Open Graph / Redes Sociais -->
+    <meta property="og:title" content="Murillo Leite • Designer & Pesquisador">
+    <meta property="og:description" content="Portfólio profissional com estética japonesa e floresta de bambu">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon com fallback para emoji -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23E63946'>🌸</text></svg>">
+    
+    <title>Murillo Leite • Designer & Pesquisador</title>
+    
+    <!-- Preconexões para otimização -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Múltiplas camadas de suminagashi animadas -->
+    <div class="suminagashi-container" aria-hidden="true">
+        <canvas id="suminagashiCanvas1" class="suminagashi-bg layer-1"></canvas>
+        <canvas id="suminagashiCanvas2" class="suminagashi-bg layer-2"></canvas>
+        <canvas id="suminagashiCanvas3" class="suminagashi-bg layer-3"></canvas>
+    </div>
+
+    <!-- Partículas flutuantes da floresta -->
+    <div class="particles-container" aria-hidden="true">
+        <div class="particle particle-1"></div>
+        <div class="particle particle-2"></div>
+        <div class="particle particle-3"></div>
+        <div class="particle particle-4"></div>
+        <div class="particle particle-5"></div>
+        <div class="particle particle-6"></div>
+        <div class="particle particle-7"></div>
+    </div>
+
+    <!-- Floresta de bambu de fundo -->
+    <div class="bamboo-forest" aria-hidden="true">
+        <div class="bamboo bamboo-1"></div>
+        <div class="bamboo bamboo-2"></div>
+        <div class="bamboo bamboo-3"></div>
+        <div class="bamboo bamboo-4"></div>
+        <div class="bamboo bamboo-5"></div>
+    </div>
+
+    <!-- Lanternas flutuantes decorativas -->
+    <div class="floating-lanterns" aria-hidden="true">
+        <div class="lantern-floating lantern-f-1">
+            <div class="lantern-f-top"></div>
+            <div class="lantern-f-middle"></div>
+            <div class="lantern-f-glow"></div>
+            <div class="lantern-f-bottom"></div>
+        </div>
+        <div class="lantern-floating lantern-f-2">
+            <div class="lantern-f-top"></div>
+            <div class="lantern-f-middle"></div>
+            <div class="lantern-f-glow"></div>
+            <div class="lantern-f-bottom"></div>
+        </div>
+        <div class="lantern-floating lantern-f-3">
+            <div class="lantern-f-top"></div>
+            <div class="lantern-f-middle"></div>
+            <div class="lantern-f-glow"></div>
+            <div class="lantern-f-bottom"></div>
+        </div>
+    </div>
+
+    <!-- Seletor de Tema -->
+    <div class="theme-selector-container">
+        <div class="theme-selector" role="group" aria-label="Seletor de tema">
+            <button class="theme-btn active" data-theme="light" aria-label="Tema claro">
+                <span class="theme-icon">☀️</span>
+                <span class="theme-label">Claro</span>
+            </button>
+            <button class="theme-btn" data-theme="dark" aria-label="Tema escuro">
+                <span class="theme-icon">🌙</span>
+                <span class="theme-label">Escuro</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Botão Voltar ao Topo -->
+    <button id="scroll-to-top" aria-label="Voltar ao topo" title="Voltar ao topo">↑</button>
+
+    <!-- Navbar com navegação -->
+    <nav class="navbar" role="navigation" aria-label="Navegação principal">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="#home" class="nav-logo" aria-label="Página inicial">
+                <span class="logo-kanji" aria-hidden="true">作</span>
+                <span class="logo-text">Murillo Leite</span>
+            </a>
+
+            <!-- Menu de navegação -->
+            <ul class="nav-menu" role="list">
+                <li role="listitem"><a href="#home" class="nav-link" data-section="home">Início</a></li>
+                <li role="listitem"><a href="#sobre" class="nav-link" data-section="sobre">Sobre</a></li>
+                <li role="listitem"><a href="#experiencia" class="nav-link" data-section="experiencia">Experiência</a></li>
+                <li role="listitem"><a href="#formacao" class="nav-link" data-section="formacao">Formação</a></li>
+                <li role="listitem"><a href="#projetos" class="nav-link" data-section="projetos">Projetos</a></li>
+                <li role="listitem"><a href="#contato" class="nav-link" data-section="contato">Contato</a></li>
+            </ul>
+
+            <!-- Botão menu responsivo -->
+            <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <main id="main-content">
+        <!-- Seção Hero -->
+        <section id="home" class="hero" role="region" aria-labelledby="hero-title">
+            <!-- Background com floresta de bambu -->
+            <div class="hero-background" aria-hidden="true">
+                <svg class="forest-bg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustração de floresta de bambu ao fundo">
+                    <!-- Montanhas distantes -->
+                    <path d="M 0 250 Q 300 150 600 250 T 1200 250 L 1200 600 L 0 600 Z" fill="#5A9B6D" opacity="0.1"/>
+                    <!-- Bambus distantes -->
+                    <line x1="100" y1="350" x2="100" y2="500" stroke="#5A9B6D" stroke-width="3" opacity="0.15"/>
+                    <line x1="150" y1="350" x2="150" y2="480" stroke="#5A9B6D" stroke-width="2.5" opacity="0.12"/>
+                    <line x1="200" y1="350" x2="200" y2="510" stroke="#5A9B6D" stroke-width="3" opacity="0.15"/>
+                    <!-- Bambus direita -->
+                    <line x1="1050" y1="350" x2="1050" y2="500" stroke="#5A9B6D" stroke-width="3" opacity="0.15"/>
+                    <line x1="1100" y1="350" x2="1100" y2="480" stroke="#5A9B6D" stroke-width="2.5" opacity="0.12"/>
+                    <line x1="1150" y1="350" x2="1150" y2="510" stroke="#5A9B6D" stroke-width="3" opacity="0.15"/>
+                    <!-- Folhas de bambu -->
+                    <ellipse cx="95" cy="330" rx="15" ry="25" fill="#5A9B6D" opacity="0.2" transform="rotate(-30 95 330)"/>
+                    <ellipse cx="155" cy="330" rx="12" ry="20" fill="#5A9B6D" opacity="0.2" transform="rotate(35 155 330)"/>
+                </svg>
+            </div>
+
+            <!-- Container principal -->
+            <div class="hero-container">
+                <!-- Conteúdo texto -->
+                <div class="hero-content">
+                    <!-- Lanterna esquerda -->
+                    <div class="lantern lantern-left" aria-hidden="true">
+                        <div class="lantern-top"></div>
+                        <div class="lantern-middle"></div>
+                        <div class="lantern-glow"></div>
+                        <div class="lantern-bottom"></div>
+                    </div>
+
+                    <!-- Texto principal -->
+                    <div class="hero-text">
+                        <h1 id="hero-title" class="hero-title animate-fade-up">
+                            Murillo<span class="accent-red">.</span>
+                        </h1>
+                        <p class="hero-subtitle animate-fade-up" style="animation-delay: 0.1s">
+                            Designer & Pesquisador
+                        </p>
+                        <p class="hero-description animate-fade-up" style="animation-delay: 0.2s">
+                            Explorando a intersecção entre ciência, design e a beleza da estética japonesa com floresta de bambu
+                        </p>
+
+                        <!-- Decoração geométrica -->
+                        <div class="geometric-decoration animate-fade-up" style="animation-delay: 0.3s" aria-hidden="true">
+                            <div class="line-horizontal line-red-bg"></div>
+                            <div class="dots-group">
+                                <span class="dot-small dot-red"></span>
+                                <span class="dot-small dot-green"></span>
+                                <span class="dot-small dot-red"></span>
+                            </div>
+                        </div>
+
+                        <!-- CTA Buttons -->
+                        <div class="hero-buttons">
+                            <a href="#projetos" class="btn-primary animate-fade-up" style="animation-delay: 0.4s">
+                                Explorar Trabalhos
+                            </a>
+                            <a href="#contato" class="btn-secondary animate-fade-up" style="animation-delay: 0.5s">
+                                Entre em Contato
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Lanterna direita -->
+                    <div class="lantern lantern-right" aria-hidden="true">
+                        <div class="lantern-top"></div>
+                        <div class="lantern-middle"></div>
+                        <div class="lantern-glow"></div>
+                        <div class="lantern-bottom"></div>
+                    </div>
+                </div>
+
+                <!-- Visual SVG -->
+                <div class="hero-visual" aria-hidden="true">
+                    <svg class="torii-gate animate-float" viewBox="0 0 200 300" role="img" aria-label="Portão Torii japonês decorativo">
+                        <defs>
+                            <filter id="glow">
+                                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        <rect x="40" y="120" width="25" height="160" fill="none" stroke="currentColor" stroke-width="2" filter="url(#glow)"/>
+                        <rect x="135" y="120" width="25" height="160" fill="none" stroke="currentColor" stroke-width="2" filter="url(#glow)"/>
+                        <line x1="20" y1="120" x2="180" y2="120" stroke="currentColor" stroke-width="3" filter="url(#glow)"/>
+                        <line x1="35" y1="90" x2="165" y2="90" stroke="currentColor" stroke-width="2" opacity="0.7"/>
+                        <circle cx="100" cy="60" r="20" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Indicador de scroll -->
+            <div class="scroll-indicator animate-bounce" aria-hidden="true">
+                <span></span>
+            </div>
+        </section>
+
+        <!-- SEÇÃO SOBRE -->
+        <section id="sobre" class="sobre" role="region" aria-labelledby="sobre-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="sobre-title" class="section-title animate-slide-left">Sobre Mim</h2>
+                    <div class="title-decoration" aria-hidden="true">
+                        <span class="circle-accent circle-red"></span>
+                        <span class="line-accent line-red-gradient"></span>
+                    </div>
+                </div>
+
+                <div class="sobre-content">
+                    <!-- Texto -->
+                    <div class="sobre-text animate-slide-right">
+                        <p>
+                            Olá! Meu nome é Murillo Leite. Sou um entusiasta pela ciência, especialmente pela biologia, 
+                            com uma paixão profunda por design e comunicação visual. Através de meus projetos, busco traduzir 
+                            conceitos científicos complexos em experiências visuais acessíveis e inspiradoras.
+                        </p>
+                        <p>
+                            Meu trabalho reflete a harmonia entre os processos naturais e a precisão do design moderno, 
+                            sempre inspirado pelo minimalismo e elegância da estética japonesa, combinada com a vitalidade 
+                            de uma floresta de bambu verde pastel. Acredito que a ciência merece ser apresentada com a mesma beleza e atenção aos detalhes.
+                        </p>
+
+                        <!-- Estatísticas -->
+                        <div class="sobre-stats">
+                            <div class="stat-item">
+                                <span class="stat-number" data-count="2">0</span>
+                                <span class="stat-label">Projetos</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-count="100">0</span>
+                                <span class="stat-label">% Dedicação</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-count="5">0</span>
+                                <span class="stat-label">Áreas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Foto -->
+                    <div class="sobre-image-container animate-fade">
+                        <div class="profile-frame">
+                            <div class="profile-photo-wrapper">
+                                <!-- Substitua pela URL da sua foto -->
+                                <img src="minha-foto.jpg" alt="Foto de Murillo Leite" class="profile-photo" id="profile-photo">
+                                <div class="profile-photo-placeholder" id="photo-placeholder" style="display: none;">
+                                    <div class="placeholder-content">
+                                        <span class="placeholder-icon">📸</span>
+                                        <span class="placeholder-name">Murillo Leite</span>
+                                        <span class="placeholder-title">Designer & Pesquisador</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="profile-decoration" aria-hidden="true">
+                                <div class="decoration-dot dot-red"></div>
+                                <div class="decoration-dot dot-green"></div>
+                                <div class="decoration-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO EXPERIÊNCIA -->
+        <section id="experiencia" class="experiencia" role="region" aria-labelledby="experiencia-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="experiencia-title" class="section-title animate-slide-left">Experiência</h2>
+                    <div class="title-decoration" aria-hidden="true">
+                        <span class="circle-accent circle-green"></span>
+                        <span class="line-accent line-green-gradient"></span>
+                    </div>
+                </div>
+
+                <div class="experiencia-timeline">
+                    <!-- Timeline item 1 -->
+                    <article class="timeline-item animate-slide-up">
+                        <div class="timeline-marker" aria-hidden="true"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Pesquisador em Desenvolvimento</h3>
+                            <p class="timeline-subtitle">AUTÔNOMO • 2024 - PRESENTE</p>
+                            <p class="timeline-description">
+                                Desenvolvimento de projetos de pesquisa em biologia com foco em design e comunicação visual. 
+                                Criação de plataformas educacionais e conteúdo informativo sobre temas científicos.
+                            </p>
+                            <div class="timeline-tags" role="list">
+                                <span class="tag-timeline" role="listitem">Pesquisa</span>
+                                <span class="tag-timeline" role="listitem">Design</span>
+                                <span class="tag-timeline" role="listitem">Web</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Timeline item 2 -->
+                    <article class="timeline-item animate-slide-up" style="animation-delay: 0.1s">
+                        <div class="timeline-marker" aria-hidden="true"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Estudante de Tecnologia</h3>
+                            <p class="timeline-subtitle">ETEC Francisco Morato • 2023 - 2025</p>
+                            <p class="timeline-description">
+                                Formação técnica completa em informática. Desenvolvimento de projetos de programação, 
+                                design de interfaces e manutenção de sistemas. Participação em feiras de tecnologia.
+                            </p>
+                            <div class="timeline-tags" role="list">
+                                <span class="tag-timeline" role="listitem">Programação</span>
+                                <span class="tag-timeline" role="listitem">Design</span>
+                                <span class="tag-timeline" role="listitem">Sistemas</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Timeline item 3 -->
+                    <article class="timeline-item animate-slide-up" style="animation-delay: 0.2s">
+                        <div class="timeline-marker" aria-hidden="true"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Explorador de Criatividade</h3>
+                            <p class="timeline-subtitle">Projetos Pessoais • 2023 - Presente</p>
+                            <p class="timeline-description">
+                                Criação de portfólio pessoal com foco em estética japonesa e design minimalista. 
+                                Desenvolvimento de websites educacionais e plataformas de visualização de dados.
+                            </p>
+                            <div class="timeline-tags" role="list">
+                                <span class="tag-timeline" role="listitem">Design</span>
+                                <span class="tag-timeline" role="listitem">Web</span>
+                                <span class="tag-timeline" role="listitem">Criatividade</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Formação -->
+        <section id="formacao" class="formacao" role="region" aria-labelledby="formacao-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="formacao-title" class="section-title animate-slide-left">Formação</h2>
+                    <div class="title-decoration" aria-hidden="true">
+                        <span class="circle-accent circle-green"></span>
+                        <span class="line-accent line-green-gradient"></span>
+                    </div>
+                </div>
+
+                <div class="formacao-grid">
+                    <!-- Card 1 -->
+                    <article class="formacao-card formacao-card-primary animate-slide-up">
+                        <div class="formacao-header">
+                            <svg class="formacao-icon" viewBox="0 0 100 100" role="img" aria-label="Ícone de educação">
+                                <path d="M 20 50 L 50 25 L 80 50" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                                <line x1="50" y1="25" x2="50" y2="40" stroke="currentColor" stroke-width="2"/>
+                                <rect x="30" y="55" width="40" height="30" fill="none" stroke="currentColor" stroke-width="2" rx="2"/>
+                                <line x1="50" y1="55" x2="50" y2="85" stroke="currentColor" stroke-width="1.5"/>
+                                <line x1="35" y1="65" x2="65" y2="65" stroke="currentColor" stroke-width="1" opacity="0.6"/>
+                                <line x1="35" y1="73" x2="60" y2="73" stroke="currentColor" stroke-width="1" opacity="0.6"/>
+                            </svg>
+                            <h3 class="formacao-title">Técnico em Informática</h3>
+                        </div>
+                        <div class="formacao-body">
+                            <p class="formacao-instituicao">ETEC Francisco Morato</p>
+                            <p class="formacao-ano">2023 - 2025</p>
+                            <p class="formacao-detalhes">Formação técnica completa em desenvolvimento e manutenção de sistemas, com ênfase em programação, design e redes.</p>
+                            <div class="formacao-habilidades" role="list">
+                                <span class="hab-badge hab-red" role="listitem">Programação</span>
+                                <span class="hab-badge hab-green" role="listitem">Sistemas</span>
+                                <span class="hab-badge hab-red" role="listitem">Redes</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="formacao-card formacao-card-secondary animate-slide-up" style="animation-delay: 0.1s">
+                        <div class="formacao-header">
+                            <svg class="formacao-icon" viewBox="0 0 100 100" role="img" aria-label="Ícone de idioma">
+                                <circle cx="50" cy="50" r="35" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <path d="M 35 40 Q 40 50 35 60" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+                                <path d="M 65 35 Q 70 50 65 65" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+                                <line x1="20" y1="50" x2="80" y2="50" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+                            </svg>
+                            <h3 class="formacao-title">Inglês Intermediário</h3>
+                        </div>
+                        <div class="formacao-body">
+                            <p class="formacao-instituicao">Proficiência em Desenvolvimento</p>
+                            <p class="formacao-ano">Contínuo</p>
+                            <p class="formacao-detalhes">Capacidade de leitura, escrita e conversação em nível intermediário. Compreensão de documentação técnica e comunicação profissional.</p>
+                            <div class="formacao-habilidades" role="list">
+                                <span class="hab-badge hab-green" role="listitem">Leitura</span>
+                                <span class="hab-badge hab-red" role="listitem">Escrita</span>
+                                <span class="hab-badge hab-green" role="listitem">Conversação</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="formacao-card formacao-card-tertiary animate-slide-up" style="animation-delay: 0.2s">
+                        <div class="formacao-header">
+                            <svg class="formacao-icon" viewBox="0 0 100 100" role="img" aria-label="Ícone de língua espanhola">
+                                <path d="M 50 30 Q 70 30 75 50 Q 70 70 50 70 Q 30 70 25 50 Q 30 30 50 30" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <text x="50" y="55" text-anchor="middle" font-size="24" fill="currentColor">Ñ</text>
+                            </svg>
+                            <h3 class="formacao-title">Espanhol Básico</h3>
+                        </div>
+                        <div class="formacao-body">
+                            <p class="formacao-instituicao">Conhecimento Básico</p>
+                            <p class="formacao-ano">Em Desenvolvimento</p>
+                            <p class="formacao-detalhes">Fundamentos de comunicação e compreensão em espanhol. Vocabulário essencial e estruturas gramaticais básicas.</p>
+                            <div class="formacao-habilidades" role="list">
+                                <span class="hab-badge hab-red" role="listitem">Vocabulário</span>
+                                <span class="hab-badge hab-green" role="listitem">Gramática</span>
+                                <span class="hab-badge hab-red" role="listitem">Compreensão</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Projetos -->
+        <section id="projetos" class="projetos" role="region" aria-labelledby="projetos-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="projetos-title" class="section-title animate-slide-left">Projetos</h2>
+                    <div class="title-decoration" aria-hidden="true">
+                        <span class="circle-accent circle-red"></span>
+                        <span class="line-accent line-green-gradient"></span>
+                    </div>
+                </div>
+
+                <div class="projetos-grid">
+                    <!-- Projeto 1: TCC - EM MANUTENÇÃO -->
+                    <article class="projeto-card project-tcc animate-slide-up">
+                        <div class="projeto-image tcc-bg">
+                            <div class="projeto-overlay"></div>
+                            <div class="projeto-particles" aria-hidden="true">
+                                <div class="particle-proj"></div>
+                                <div class="particle-proj"></div>
+                                <div class="particle-proj"></div>
+                            </div>
+
+                            <svg class="projeto-icon" viewBox="0 0 100 100" role="img" aria-label="Ícone de pesquisa">
+                                <line x1="25" y1="40" x2="25" y2="80" stroke="currentColor" stroke-width="2"/>
+                                <line x1="75" y1="40" x2="75" y2="80" stroke="currentColor" stroke-width="2"/>
+                                <line x1="15" y1="40" x2="85" y2="40" stroke="currentColor" stroke-width="2.5"/>
+                                <line x1="25" y1="55" x2="75" y2="55" stroke="currentColor" stroke-width="1.5" opacity="0.7"/>
+                                <circle cx="50" cy="25" r="15" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+                            </svg>
+                            
+                            <!-- Badge de manutenção -->
+                            <div class="maintenance-badge">
+                                <span>🔧</span>
+                                <span>Em manutenção</span>
+                            </div>
+                        </div>
+
+                        <div class="projeto-content">
+                            <h3 class="projeto-title">Trabalho de Conclusão de Curso</h3>
+                            <p class="projeto-categoria">TCC - Pesquisa em Biologia</p>
+                            <p class="projeto-descricao">
+                                Um estudo aprofundado explorando aspectos fundamentais da biologia contemporânea. 
+                                Pesquisa original combinando metodologia científica rigorosa com visualização de dados inovadora e design impactante.
+                            </p>
+
+                            <div class="projeto-meta">
+                                <span class="meta-item">
+                                    <strong>Status:</strong> <span class="status-manutencao">Em manutenção</span>
+                                </span>
+                                <span class="meta-item">
+                                    <strong>Duração:</strong> 2023-2025
+                                </span>
+                            </div>
+
+                            <div class="projeto-tags" role="list">
+                                <span class="tag tag-red" role="listitem">Pesquisa</span>
+                                <span class="tag tag-green" role="listitem">Biologia</span>
+                                <span class="tag tag-red" role="listitem">Científico</span>
+                            </div>
+
+                            <!-- Botão do Projeto TCC desabilitado -->
+                            <button class="btn-projeto disabled" disabled aria-label="Projeto em manutenção">
+                                Em manutenção
+                                <span class="btn-arrow" aria-hidden="true">🔧</span>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Projeto 2: Mesozoico -->
+                    <article class="projeto-card project-mesozoico animate-slide-up" style="animation-delay: 0.1s" data-projeto="mesozoico">
+                        <div class="projeto-image mesozoico-bg">
+                            <div class="projeto-overlay"></div>
+                            <div class="projeto-particles" aria-hidden="true">
+                                <div class="particle-proj"></div>
+                                <div class="particle-proj"></div>
+                                <div class="particle-proj"></div>
+                            </div>
+
+                            <svg class="projeto-icon" viewBox="0 0 100 100" role="img" aria-label="Ícone de paleontologia">
+                                <ellipse cx="50" cy="55" rx="30" ry="15" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="25" cy="50" r="12" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <path d="M 78 55 Q 95 50 98 60" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="22" cy="47" r="2" fill="currentColor"/>
+                                <line x1="40" y1="38" x2="38" y2="25" stroke="currentColor" stroke-width="1.5"/>
+                                <line x1="50" y1="38" x2="50" y2="25" stroke="currentColor" stroke-width="1.5"/>
+                                <line x1="60" y1="38" x2="62" y2="25" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                        </div>
+
+                        <div class="projeto-content">
+                            <h3 class="projeto-title">Era Mesozoica</h3>
+                            <p class="projeto-categoria">Website Informativo & Educacional</p>
+                            <p class="projeto-descricao">
+                                Um site imersivo e interativo que explora a fascinante Era Mesozoica. Apresenta 
+                                períodos Triássico, Jurássico e Cretáceo com foco em paleontologia, evolução e descobertas científicas.
+                            </p>
+
+                            <div class="projeto-meta">
+                                <span class="meta-item">
+                                    <strong>Tipo:</strong> Website
+                                </span>
+                                <span class="meta-item">
+                                    <strong>Stack:</strong> HTML, CSS, JS
+                                </span>
+                            </div>
+
+                            <div class="projeto-tags" role="list">
+                                <span class="tag tag-green" role="listitem">Web Design</span>
+                                <span class="tag tag-red" role="listitem">Educação</span>
+                                <span class="tag tag-green" role="listitem">Paleontologia</span>
+                            </div>
+
+                            <!-- Botão do Projeto Mesozoico com link correto -->
+                            <a href="https://japaof.github.io/site-mesozoico/" class="btn-projeto" target="_blank" rel="noopener noreferrer" aria-label="Visitar site Era Mesozoica">
+                                Visitar Site
+                                <span class="btn-arrow" aria-hidden="true">→</span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Seção de skills técnicos -->
+                <div class="projetos-skills">
+                    <h3 class="skills-subtitle">Tecnologias & Ferramentas</h3>
+                    <div class="tech-grid" role="list">
+                        <div class="tech-item animate-pop" role="listitem">
+                            <span class="tech-icon" aria-hidden="true">⚡</span>
+                            <span class="tech-name">HTML5</span>
+                        </div>
+                        <div class="tech-item animate-pop" style="animation-delay: 0.05s" role="listitem">
+                            <span class="tech-icon" aria-hidden="true">🎨</span>
+                            <span class="tech-name">CSS3</span>
+                        </div>
+                        <div class="tech-item animate-pop" style="animation-delay: 0.1s" role="listitem">
+                            <span class="tech-icon" aria-hidden="true">⚙️</span>
+                            <span class="tech-name">JavaScript</span>
+                        </div>
+                        <div class="tech-item animate-pop" style="animation-delay: 0.15s" role="listitem">
+                            <span class="tech-icon" aria-hidden="true">🖼️</span>
+                            <span class="tech-name">Design</span>
+                        </div>
+                        <div class="tech-item animate-pop" style="animation-delay: 0.2s" role="listitem">
+                            <span class="tech-icon" aria-hidden="true">🔬</span>
+                            <span class="tech-name">Pesquisa</span>
+                        </div>
+                        <div class="tech-item animate-pop" style="animation-delay: 0.25s" role="listitem">
+                            <span class="tech-icon" aria-hidden="true">📊</span>
+                            <span class="tech-name">Dados</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Contato -->
+        <section id="contato" class="contato" role="region" aria-labelledby="contato-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="contato-title" class="section-title animate-slide-left">Vamos Conectar</h2>
+                    <div class="title-decoration" aria-hidden="true">
+                        <span class="circle-accent circle-green"></span>
+                        <span class="line-accent line-red-gradient"></span>
+                    </div>
+                </div>
+
+                <div class="contato-content">
+                    <p class="contato-subtitulo animate-fade-up">
+                        Interessado em colaborar ou conhecer mais sobre meus projetos e pesquisas?
+                    </p>
+
+                    <div class="contato-links" role="list">
+                        <a href="mailto:murillo.da.silva.leite@gmail.com" class="contato-card animate-pop" data-tipo="email" role="listitem">
+                            <div class="card-icon card-icon-red" aria-hidden="true">✉</div>
+                            <span class="card-label">Email</span>
+                            <span class="card-hint">murillo.da.silva.leite@gmail.com</span>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/murillo-da-silva-4014023a7/" class="contato-card animate-pop" data-tipo="linkedin" style="animation-delay: 0.1s" role="listitem" target="_blank" rel="noopener noreferrer">
+                            <div class="card-icon card-icon-green" aria-hidden="true">in</div>
+                            <span class="card-label">LinkedIn</span>
+                            <span class="card-hint">Conecte comigo</span>
+                        </a>
+
+                        <a href="https://github.com/JapaOf?tab=repositories" class="contato-card animate-pop" data-tipo="github" style="animation-delay: 0.2s" role="listitem" target="_blank" rel="noopener noreferrer">
+                            <div class="card-icon card-icon-red" aria-hidden="true">⚙</div>
+                            <span class="card-label">GitHub</span>
+                            <span class="card-hint">Veja meu código</span>
+                        </a>
+
+                        <a href="https://www.instagram.com/muli.niunai/" class="contato-card animate-pop" data-tipo="instagram" style="animation-delay: 0.3s" role="listitem" target="_blank" rel="noopener noreferrer">
+                            <div class="card-icon card-icon-green" aria-hidden="true">📸</div>
+                            <span class="card-label">Instagram</span>
+                            <span class="card-hint">Acompanhe</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- CTA Form info -->
+                <div class="contato-cta">
+                    <p>Ou envie uma mensagem diretamente:</p>
+                    <a href="mailto:murillo.da.silva.leite@gmail.com?subject=Olá Murillo!" class="btn-primary">
+                        Enviar Email
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">&copy; 2026 Murillo Leite. Todos os direitos reservados.</p>
+                <div class="footer-decoration" aria-hidden="true">
+                    <span class="dot-footer dot-footer-red"></span>
+                    <span class="dot-footer dot-footer-green"></span>
+                    <span class="dot-footer dot-footer-red"></span>
+                </div>
+            </div>
+
+            <div class="footer-ornament" aria-hidden="true">
+                <div class="ornament-dot"></div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-credits">Desenvolvido com ❤️ e estética japonesa</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script principal -->
+    <script src="script.js"></script>
+</body>
+</html>
